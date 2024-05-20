@@ -8,8 +8,6 @@ import { Data } from "@angular/router";
 //     address: string;
 //     dob: Date ;
 //     gender: string;
-   
-//     this.id = 
 
 // }
 

@@ -30,7 +30,7 @@
                             <td>{{StudentItem.lastname}}</td>
                             <td>{{StudentItem.address}}</td>
                             <td>{{StudentItem.gender}}</td>
-                            <td>{{StudentItem.dob}}</td>
+                            <td>{{ StudentItem.dob | date }}</td>
                             <td>
                                 <button type="button" class="btn btn-success" [routerLink]="[ 'edit', StudentItem.id]">Edit</button>
                                 <button type = "button" class="btn btn-danger" (click)="deleteStudent(StudentItem.id)">Delete</button>

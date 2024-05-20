@@ -20,7 +20,7 @@ export class HomeComponent implements OnInit {
     this.studentServices.addStudent(this.addStudentComponent)
       .subscribe({
         next: (student) => {
-          this.router.navigate(['students']);
+          this.router.navigate(['']);
         },
         error: (error) => {
           console.log(error);
