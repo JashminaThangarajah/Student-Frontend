@@ -1,0 +1,5 @@
+/* You can add global styles to this file, and also import other style files */
+.form-group.ng-touched.ng-invalid
+{
+    border:1px solid red;
+}

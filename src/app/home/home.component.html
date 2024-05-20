@@ -1,0 +1,38 @@
+<div class="outer">
+    <div class="login-container">
+        <form [formGroup]="userForm" #form="ngForm" (ngSubmit)="addStudent()">
+          <div class="form-group">
+            <label for="firstname">First Name</label>
+            <input formControlName="firstname" name="firstname" [(ngModel)]="addStudentComponent.firstname" type="text" placeholder="firstname" id="firstname" required>
+            <small *ngIf="userForm.controls['firstname'].dirty && userForm.controls['firstname'].hasError('required')" class="text-danger">*please enter a valid firstname!</small>
+          </div>
+
+          <div class="form-group">
+            <label for="lastname">Last Name</label>
+            <input formControlName="lastname" name="lastname" type="text" [(ngModel)]="addStudentComponent.lastname" placeholder="lastname" id="lastname" required>
+            <small *ngIf="userForm.controls['lastname'].dirty && userForm.controls['lastname'].hasError('required')" class="text-danger">*please enter a valid lastname!</small>
+          </div>
+
+          <div class="form-group">
+            <label for="address">Address</label>
+            <textarea formControlName="address" name="address" [(ngModel)]="addStudentComponent.address" type="text" id="address" placeholder="address"></textarea>
+          </div>
+      
+          <div>
+              <label for="dob">Date of Birth:</label>
+              <input type="date" formControlName="dob" [(ngModel)]="addStudentComponent.dob" required>
+          </div>
+          <div>
+              <label>Gender:</label>
+              <label><input type="radio" formControlName="gender" [(ngModel)]="addStudentComponent.gender" value="Male"> Male</label>
+              <label><input type="radio" formControlName="gender" [(ngModel)]="addStudentComponent.gender" value="emale"> Female</label>
+          </div>
+          <div>
+              <label for="profileimage">Profile Image:</label>
+              <input type="file" [(ngModel)]="addStudentComponent.profileimage" formControlName="profileImage">
+          </div>
+
+          <button [disabled]="userForm.invalid" routerLink="/submit" type="submit" class="btn btn-primary btn-block mt-4 w-100">Submit</button>
+        </form>
+    </div>
+</div>

@@ -1,0 +1,27 @@
+.myTable {
+  width:1400px;
+  margin: 0 auto;
+  background-color: #eee;
+  border-collapse: collapse;
+}
+
+.myTable th, .myTable td {
+  padding: 10px;
+  border: 2px solid #000;
+}
+
+.myTable th {
+  background-color: #800080;
+  color: white;
+  width:1000px; /* Adjust based on your preference */
+}
+
+.myTable td {
+  background-color: #fff;
+  color: #000;
+}
+
+/* Alternating row background colors */
+.myTable tbody tr:nth-child(even) {
+  background-color: #f2f2f2;
+}

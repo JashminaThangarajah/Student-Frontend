@@ -1,0 +1,68 @@
+
+<div class="row">
+    <div class="col-md-12">
+        <div class="card">
+            <div class="card-header">
+                <h4>
+                    Add Student
+                    <button type="button" class="btn btn-primary btn-sm float-end" (click)="openModal()">Add Student</button>
+                </h4>
+            </div>
+            <div class="card-body">
+                <table class="table table-bordered table-stiped ">
+                    <thead >
+                        <tr class="myTable" >
+                            <th>Id</th>
+                            <th>ProfileImage</th>
+                            <th>First Name</th>
+                            <th>Last Name</th>
+                            <th>Address</th>
+                            <th>Gender</th>
+                            <th>Dob</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody *ngIf="students && students.length>0">
+                        <tr *ngFor="let StudentItem of students">
+                            <td>{{StudentItem.id}}</td>
+                            <td>{{StudentItem.profileimage}}</td>
+                            <td>{{StudentItem.firstname}}</td>
+                            <td>{{StudentItem.lastname}}</td>
+                            <td>{{StudentItem.address}}</td>
+                            <td>{{StudentItem.gender}}</td>
+                            <td>{{StudentItem.dob}}</td>
+                            <td>
+                                <button type="button" class="btn btn-success" [routerLink]="[ 'edit', StudentItem.id]">Edit</button>
+                                <button type = "button" class="btn btn-danger" (click)="deleteStudent(StudentItem.id)">Delete</button>
+            
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <p *ngIf="!students || students.length<=0">No Student Found</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel" [style.color] = "color">
+                        Student Registration
+                    </h1>
+                    <button type="button" class="btn btn-danger" (click)="closeModal()" data-bs-dismiss="modal" aria-label="Close">Back</button>
+                </div>
+                <div class="modal-body">
+                    <app-home></app-home>
+                </div>
+                <div class="modal-footer">
+                    <!-- <button type="button" class="btn btn-secondary" (click)="closeModal()" data-bs-dismiss="modal">Close</button> -->
+                    <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
