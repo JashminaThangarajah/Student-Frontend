@@ -11,6 +11,14 @@ import { Router } from '@angular/router';
   styleUrls: ['./student-registration.component.css']
 })
 export class StudentRegistrationComponent implements OnInit {
+color1 = "white";
+// searchText :string='';
+// onSearchTextEntered(searchValue:string)
+// {
+//   this.searchText = searchValue;
+//   console.log(this.searchText)
+// }
+
 
   // StudentArray: any[] = [];
   // isResultLoaded = false;
