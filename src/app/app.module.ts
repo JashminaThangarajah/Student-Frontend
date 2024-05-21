@@ -8,7 +8,7 @@ import { HomeComponent } from './home/home.component';
 import {HttpClientModule} from '@angular/common/http'
 import { StudentRegistrationComponent } from './student-registration/student-registration.component';
 import { EditStudentComponent } from './edit-student/edit-student.component';
-import { SearchComponent } from './search/search.component';
+import { SearchPipe } from './search.pipe';
 
 @NgModule({
   declarations: [
@@ -16,7 +16,7 @@ import { SearchComponent } from './search/search.component';
     HomeComponent,
     StudentRegistrationComponent,
     EditStudentComponent,
-    SearchComponent,
+    SearchPipe,
    
   ],
   imports: [

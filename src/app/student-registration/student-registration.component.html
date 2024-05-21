@@ -13,9 +13,11 @@
               <a class="nav-link disabled">Disabled</a>
             </div>
           </div>
-          <!-- <app-search (searchTextChanged)="onSearchTextEntered($event)"></app-search> -->
-                    <app-search ></app-search>
-
+          <form class="d-flex" role="search">
+            <input class="form-control me-2" name="searchTerm" type="search" [(ngModel)]="searchTerm" 
+            (keyup)="search($any($event.target).value)" placeholder="Search" aria-label="Search">
+            <button class="btn btn-secondary"  type="button">Search</button>
+          </form>
         </div>
       </nav>
 </section>
@@ -44,8 +46,7 @@
                         </tr>
                     </thead>
                     <tbody *ngIf="students && students.length>0">
-                        <tr *ngFor="let StudentItem of students ">
-                            <!-- <div *ngIf="searchText === '' || StudentItem.firstname.toLocaleLowerCase().includes(searchText)"></div> -->
+                        <tr *ngFor="let StudentItem of students | search:searchTerm; index as i">
                             <td>{{StudentItem.id}}</td>
                             <td>{{StudentItem.profileimage}}</td>
                             <td>{{StudentItem.firstname}}</td>

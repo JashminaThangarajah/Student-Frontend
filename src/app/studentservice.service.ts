@@ -40,16 +40,5 @@ export class StudentserviceService {
     
   
   }
-
-  // deleteEmployee(id:any): Observable<Student> {
-  //   return this.http.delete<Student>
-  //   (this.baseURL + "/api/Student/DeleteStudent/${id}");
-  // }
-  
-
-  
-
-
-
   
 }
