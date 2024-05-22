@@ -9,6 +9,7 @@ import {HttpClientModule} from '@angular/common/http'
 import { StudentRegistrationComponent } from './student-registration/student-registration.component';
 import { EditStudentComponent } from './edit-student/edit-student.component';
 import { SearchPipe } from './search.pipe';
+import { UploadComponent } from './upload/upload.component';
 
 @NgModule({
   declarations: [
@@ -17,6 +18,7 @@ import { SearchPipe } from './search.pipe';
     StudentRegistrationComponent,
     EditStudentComponent,
     SearchPipe,
+    UploadComponent,
    
   ],
   imports: [

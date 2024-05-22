@@ -11,6 +11,9 @@ import { Router } from '@angular/router';
   styleUrls: ['./student-registration.component.css']
 })
 export class StudentRegistrationComponent implements OnInit {
+  public createImgPath = (serverPath: string) => { 
+    return `https://localhost:7079/${serverPath}`; 
+  }
   
   searchPost : any;
   searchTerm!:string;
