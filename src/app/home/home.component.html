@@ -1,6 +1,6 @@
 <div class="outer">
     <div class="login-container">
-        <form [formGroup]="userForm" #form="ngForm" (ngSubmit)="onCreate()">
+        <form [formGroup]="userForm" #form="ngForm" (ngSubmit)="onCreate()" enctype="multipart/form-data">
           <div class="form-group">
             <label for="firstname">First Name</label>
             <input formControlName="firstname" name="firstname" [(ngModel)]="addStudentComponent.firstname" type="text" placeholder="firstname" id="firstname" required>
@@ -37,7 +37,7 @@
             
           </div>
 
-          <button [disabled]="userForm.invalid" (click)="addStudent()" routerLink="/submit" type="submit" class="btn btn-primary btn-block mt-4 w-100">Submit</button>
+          <button [disabled]="userForm.invalid" (click)="addStudent()" routerLink="/" type="submit" class="btn btn-primary btn-block mt-4 w-100">Submit</button>
         </form>
     </div>
 </div>

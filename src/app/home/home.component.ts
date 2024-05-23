@@ -56,7 +56,8 @@ export class HomeComponent implements OnInit {
         } else if (event.type === HttpEventType.Response) {
           this.message = 'Upload success.';
           this.addStudentComponent.profileimage = (event.body as any).dbPath;
-          //this.onUploadFinished.emit(event.body);
+          this.addStudent();
+          this.onUploadFinished.emit(event.body);
         }
       },
       error: (err: HttpErrorResponse) => {
@@ -94,6 +95,8 @@ export class HomeComponent implements OnInit {
 
   onFileSelected(event: any) {
     this.selectedFile = event.target.files ? event.target.files[0] : null;
+    this.uploadFile(event.target.files); // Start upload immediately after file selection
+
   }
 
 
@@ -102,7 +105,7 @@ export class HomeComponent implements OnInit {
 
     this.studentServices.addStudent(this.addStudentComponent)
       .subscribe({
-        next: (student) => {
+        next: () => {
           this.router.navigate(['']);
         },
         error: (error) => {

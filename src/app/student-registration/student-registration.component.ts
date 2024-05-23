@@ -25,8 +25,8 @@ export class StudentRegistrationComponent implements OnInit {
   )
   }
 
-color1 = "white";
-color = "purple";
+   color1 = "white";
+   color = "purple";
 
   constructor(private fb: FormBuilder, private renderer: Renderer2,private studentService:StudentserviceService,private router:Router) {}
   students:Student[] = [];
