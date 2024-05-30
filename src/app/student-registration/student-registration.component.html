@@ -46,7 +46,7 @@
                         </tr>
                     </thead>
                     <tbody *ngIf="students && students.length>0">
-                        <tr *ngFor="let StudentItem of students | search:searchTerm; index as i">
+                        <tr *ngFor="let StudentItem of students | paginate: { itemsPerPage: 3, currentPage: p } | search:searchTerm; index as i ">
                             <td>{{StudentItem.id}}</td>
                             <!-- <td><img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAgEASABIAAD…QXi1lYLs3uedoVULVW61BLT5sG4O+M7YrGrw9cS0435Nz/9k=" alt="profile picture" style="width:60px; height:60px;"></td> -->
                             <td><img [src]="StudentItem.profileimage" alt="profile picture" style="width:60px; height:60px;" class="rounded-circle"></td>
@@ -89,6 +89,11 @@
             </div>
         </div>
     </div>
+
+<div >
+    <pagination-controls (pageChange)="p = $event"></pagination-controls>
+</div>
+
 </div>
 <div>
 </div>

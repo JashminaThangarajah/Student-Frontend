@@ -10,6 +10,7 @@ import { StudentRegistrationComponent } from './student-registration/student-reg
 import { EditStudentComponent } from './edit-student/edit-student.component';
 import { SearchPipe } from './search.pipe';
 import { UploadComponent } from './upload/upload.component';
+import {NgxPaginationModule} from 'ngx-pagination';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { UploadComponent } from './upload/upload.component';
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    NgxPaginationModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
